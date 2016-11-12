@@ -1,0 +1,10 @@
+create table clientes(id integer auto_increment primary key,nombre varchar(30),apellido varchar(30),rfc varchar(10),direccion varchar(50),fechadenacimiento date);
+create table productos(id integer auto_increment primary key,nombre varchar(30),codigo varchar(20));
+create table proveedores(id integer auto_increment primary key,nombre varchar(20),direccion varchar(50),nif varchar(18));
+create table compras(id integer auto_increment primary key,id_producto integer,id_proveedor integer,id_cliente integer,precio integer);
+create table almacen(id integer auto_increment primary key,id_producto integer,cantidad integer);
+insert into clientes(nombre,apellido,rfc,direccion,fechadenacimiento)values('Fernando','Hernandez','GHC190879','la luz 12 col.san simon del.benito juarez c.p.03660 cdmx','1972-06-24'),('Ricardo','Tapia','RCG123H97','Ezna 104 col.portales del.benito juarez c.p 03560','1980-04-24'),('Ramiro','Fernandez','RF4351230','Tulipanes 12 col.mirador del.iztacalco c.p 07630 cdmx','1985-02-23'),('Danilo','Ramos','DAH578980','Uxmal 34 col.del valle del.benito juarez c.p 07434 cdmx','1990-12-23'),('Emanuel','Santos','SANT65743235','amores 12 col.del valle del.benito juarez c.p 03456 cdmx','1978-09-23');
+insert into productos(nombre,codigo)values('mochila','1243'),('mouse','1233'),('laptop hp','3212'),('calculadora cientifica','2345'),('cuardeno profesional','5679'),('bocinas inalambricas','2324');
+insert into proveedores(nombre,direccion,nif)values('Andres','angel urraza 12 col.del valle del.benito juarez c.p 03670 cdmx','AND146709HGF08'),('Alejandro','victoria 34 col.potrero del.miguel hidalgo c.p 09823','ALE434509590123'),('Gustavo','socrates col.mirador del.iztacalco c.p 04567 cdmx','GUST54636357521');
+insert into compras(id_producto,id_proveedor,id_cliente,precio)values(1,1,2,400),(2,2,3,350),(3,1,1,7500),(4,3,4,350),(5,1,2,10),(6,1,3,1200);
+insert into almacen(id_producto,cantidad)values(1,10),(2,15),(3,12),(4,20),(5,9),(6,14);
